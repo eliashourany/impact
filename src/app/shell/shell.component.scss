@@ -1,0 +1,141 @@
+@import "src/theme/theme-variables";
+
+:host {
+  display: flex;
+  flex: 1;
+}
+
+.mat-drawer {
+  border-left: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.19);
+}
+
+.mat-sidenav {
+  min-width: 300px;
+  max-width: 28%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.mat-list {
+  padding-top: 0;
+}
+
+.mat-list-item {
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: all 0.3s ease-in-out;
+  padding: 0 1.5rem !important;
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  ::ng-deep .menu-item__icon {
+    color: theme-color("info", "base");
+    font-size: 1.3rem;
+  }
+
+  .menu-item__icon--left {
+    margin-right: auto;
+  }
+
+  .menu-item__label {
+    font-size: 1rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 1rem;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.mat-list-item.active {
+  border-right: 3px solid theme-color("secondary", "base");
+  background-color: rgb(245, 245, 245);
+
+  &:hover {
+    background-color: rgb(245, 245, 245);
+  }
+
+  .menu-item__label {
+    color: theme-color("secondary", "base");
+    font-size: 1.1rem;
+  }
+
+  ::ng-deep .menu-item__icon {
+    color: theme-color("secondary", "base");
+  }
+}
+
+.menu-button {
+  margin-right: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.logo__container {
+  width: 250px;
+  margin: 2rem auto 0 auto;
+  border-bottom: 1px dashed contrast("light", "hint");
+  .logo {
+    width: 100%;
+  }
+
+  @include screen("phone") {
+    width: 150px;
+  }
+}
+
+.title {
+  margin: 5px auto;
+  text-align: center;
+  width: 250px;
+  @include contrast("light", "secondary");
+}
+
+::ng-deep .mat-drawer-inner-container {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menu__image {
+  width: 100px;
+  margin-top: auto;
+  @include screen("phone") {
+    width: 80px;
+  }
+}
+
+.menu__navigation {
+  flex-basis: 100%;
+  overflow: auto;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.search-icon {
+  color: theme-color("secondary", "base");
+}
+
+.links {
+  margin-right: auto;
+
+  .link {
+    cursor: pointer;
+  }
+
+  ::ng-deep .link__icon {
+    color: theme-color("info", "base");
+  }
+
+  .link__label {
+    font-weight: bold;
+    color: theme-color("primary", "base");
+    margin-right: 1rem;
+  }
+}

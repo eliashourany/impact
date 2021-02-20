@@ -1,0 +1,77 @@
+<div fxFlex>
+  <mat-sidenav-container fxFill>
+    <mat-sidenav #sidenav [mode]="isMobile ? 'over' : 'side'" [opened]="!isMobile" [disableClose]="!isMobile">
+      <div class="logo__container">
+        <img src="assets/impact.svg" class="logo" />
+      </div>
+      <p class="title">{{ 'SHELL.TITLE' | translate }}</p>
+      <nav class="menu__navigation">
+        <mat-list>
+          <a
+            mat-list-item
+            [routerLink]="menuItem.url"
+            routerLinkActive="active"
+            (click)="isMobile && sidenav.close()"
+            *ngFor="let menuItem of menuItems"
+          >
+            <fa-icon [icon]="menuItem.icon" [classes]="['menu-item__icon']"></fa-icon>
+            <span class="menu-item__label">{{ menuItem.label | translate }}</span>
+            <fa-icon
+              [icon]="icon"
+              [classes]="['menu-item__icon']"
+              class="menu-item__icon--left"
+              *ngIf="!urlIsActive(menuItem.url)"
+              @fadeInOut
+            ></fa-icon>
+          </a>
+        </mat-list>
+      </nav>
+      <img src="assets/wizarit-el-mhajarin.svg" class="menu__image" />
+    </mat-sidenav>
+    <div class="container">
+      <div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="1rem">
+        <div fxFlex="100%" fxHide.gt-sm>
+          <button class="menu-button" mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+        </div>
+        <mat-form-field fxFlex.lg="13%" fxFlex.xl="10%" fxFlex.sm="47%" fxFlex.lt-sm="100%">
+          <mat-label>{{ 'GOVERNORATE' | translate }}</mat-label>
+          <mat-select>
+            <mat-option [value]="1">{{ 'ALL' | translate }} </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex.lg="13%" fxFlex.xl="10%" fxFlex.sm="47%" fxFlex.lt-sm="100%">
+          <mat-label>{{ 'DISTRICT' | translate }}</mat-label>
+          <mat-select>
+            <mat-option [value]="1">{{ 'ALL' | translate }} </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex.lg="13%" fxFlex.xl="10%" fxFlex.sm="47%" fxFlex.lt-sm="100%">
+          <mat-label>{{ 'TOWN' | translate }}</mat-label>
+          <mat-select>
+            <mat-option [value]="1">{{ 'ALL' | translate }} </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex.lg="50%" fxFlex.xl="30%" fxFlex.sm="47%" fxFlex.lt-sm="100%">
+          <mat-label>{{ 'SEARCH' | translate }}</mat-label>
+          <input matInput type="text" />
+          <mat-icon matSuffix class="search-icon">search</mat-icon>
+        </mat-form-field>
+        <div fxFlex.lt-xl="100%" class="links" fxLayout="row" fxLayoutGap="60px">
+          <div class="link" fxLayout="row" fxLayoutAlign="start center">
+            <fa-icon [icon]="icon" [classes]="['link__icon']"></fa-icon>
+            <p class="link__label">{{ 'ABOUT_THE_PROJECT' | translate }}</p>
+          </div>
+          <div class="link" fxLayout="row" fxLayoutAlign="start center">
+            <fa-icon [icon]="icon" [classes]="['link__icon']"></fa-icon>
+            <p class="link__label">{{ 'METHODOLOGY_FOLLOWED' | translate }}</p>
+          </div>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-container>
+</div>

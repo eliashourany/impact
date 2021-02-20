@@ -1,0 +1,95 @@
+/*
+ * Global application theme.
+ * Framework overrides and customization goes here.
+ */
+@import "src/theme/theme-variables";
+
+@font-face {
+  font-family: "Droid Arabic Kufi";
+  src: url("../assets/fonts/DroidArabicKufi-Bold.woff2") format("woff2"),
+    url("../assets/fonts/DroidArabicKufi-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Droid Arabic Kufi";
+  src: url("../assets/fonts/DroidArabicKufi.woff2") format("woff2"),
+    url("../assets/fonts/DroidArabicKufi.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// stylelint-disable-next-line selector-max-universal
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-color: rgb(244, 244, 244);
+  font-family: "Droid Arabic Kufi";
+}
+
+body * {
+  font-family: "Droid Arabic Kufi";
+}
+
+* {
+  scrollbar-color: rgb(222, 225, 230) transparent;
+  scrollbar-width: 10px;
+  scrollbar-base-color: transparent;
+  scrollbar-face-color: rgb(222, 225, 230);
+  scrollbar-3dlight-color: transparent;
+  scrollbar-highlight-color: white;
+  scrollbar-track-color: transparent;
+  scrollbar-arrow-color: white;
+  scrollbar-shadow-color: white;
+  scrollbar-dark-shadow-color: transparent;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(222, 225, 230);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darken(rgb(222, 225, 230), 20%);
+}
+
+/* overriding material inputs */
+.mat-select-min-line {
+  font-weight: bold;
+  color: theme-color("primary", "base");
+}
+
+.mat-input-element {
+  font-weight: bold !important;
+  font-family: "Droid Arabic Kufi" !important;
+  color: theme-color("primary", "base") !important;
+}
+
+.mat-select-trigger {
+  height: 1.35em;
+}

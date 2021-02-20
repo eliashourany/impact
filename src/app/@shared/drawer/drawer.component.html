@@ -1,0 +1,18 @@
+<mat-sidenav-container>
+  <mat-sidenav
+    [autoFocus]="false"
+    class="sidenav"
+    [disableClose]="true"
+    position="end"
+    [fixedInViewport]="true"
+    mode="over"
+    [opened]="opened"
+    (openedChange)="onOpenedChanged($event)"
+  >
+    <button (click)="onOpenedChanged(false)" class="close" mat-icon-button>
+      <mat-icon class="close-icon">close</mat-icon>
+    </button>
+    <ng-content></ng-content>
+  </mat-sidenav>
+</mat-sidenav-container>
+<div class="backdrop" *ngIf="opened" @fadeInOut></div>

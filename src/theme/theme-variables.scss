@@ -1,0 +1,195 @@
+/*
+ * Application global variables.
+ */
+
+// Angular Material custom theme
+// See https://material.angular.io/guide/theming for more details.
+//
+// You can also read https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1
+// for more insight about Angular Material theming.
+
+@import "~@angular/material/theming";
+
+$custom-primary-palette: (
+  100: theme-color("secondary", "base"),
+  50: theme-color("secondary", "base"),
+  150: theme-color("secondary", "base"),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$custom-accent-palette: (
+  100: theme-color("primary", "base"),
+  50: theme-color("primary", "base"),
+  150: theme-color("primary", "base"),
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$app-primary: mat-palette($custom-primary-palette, 100, 50, 150);
+// stylelint-disable-next-line value-keyword-case
+$app-accent: mat-palette($custom-accent-palette, 100, 50, 150);
+
+// The warn palette is optional (defaults to red).
+$app-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+// Material design icons font path
+$material-design-icons-font-directory-path: "~material-design-icons-iconfont/dist/fonts/";
+
+/*
+ * Theme Colors.
+ */
+
+$theme-colors: (
+  "primary": (
+    "base": rgb(12, 44, 127),
+  ),
+  "secondary": (
+    "base": rgb(0, 198, 177),
+  ),
+  "info": (
+    "base": rgb(174, 174, 174),
+  ),
+);
+
+@function theme-color($key: "primary", $variant: "base") {
+  $map: map-get($theme-colors, $key);
+  @return map-get($map, $variant);
+}
+
+/*
+ * Theme Contrast.
+ */
+
+$contrast-colors: (
+  "dark": (
+    "primary": rgb(255, 255, 255),
+    "secondary": rgba(255, 255, 255, 0.7),
+    "disabled": rgba(255, 255, 255, 0.5),
+    "hint": rgba(255, 255, 255, 0.12),
+  ),
+  "light": (
+    "primary": rgba(0, 0, 0, 0.87),
+    "secondary": rgba(0, 0, 0, 0.54),
+    "disabled": rgba(0, 0, 0, 0.38),
+    "hint": rgba(0, 0, 0, 0.12),
+  ),
+);
+
+@function contrast($background: "light", $type: "primary") {
+  $map: map-get($contrast-colors, $background);
+  @return map-get($map, $type);
+}
+
+@mixin contrast($background: "light", $type: "primary") {
+  color: contrast($background, $type);
+}
+
+/*
+ * Theme Font Size.
+ */
+
+$base-font-size: 1rem;
+$base-line-height: 1.25 * $base-font-size;
+
+$text-settings: (
+  "xs": (
+    font-size: 0.75rem,
+    // 12px
+    line-height: $base-line-height,
+  ),
+  "sm": (
+    font-size: 0.875rem,
+    // 14px
+    line-height: $base-line-height,
+  ),
+  "base": (
+    font-size: 1rem,
+    // 16px
+    line-height: $base-line-height,
+  ),
+  "md": (
+    font-size: 1.125rem,
+    // 18px
+    line-height: $base-line-height * 2,
+  ),
+  "lg": (
+    font-size: 1.25rem,
+    // 20px
+    line-height: $base-line-height * 2,
+  ),
+  "xl": (
+    font-size: 1.5rem,
+    // 24px
+    line-height: $base-line-height * 2,
+  ),
+);
+
+@function text-scale($level) {
+  @return map-get(map-get($text-settings, $level), "font-size");
+}
+
+@function line-height($level) {
+  @return map-get(map-get($text-settings, $level), "line-height");
+}
+
+@mixin text-setting($level) {
+  font-size: text-scale($level);
+  line-height: line-height($level);
+}
+
+/*
+ * Responsive design.
+ */
+
+$breakpoints: (
+  "phone": 599px,
+  "tablet-portrait": 600px,
+  "tablet-landscape": 960px,
+  "desktop": 1280px,
+  "big-desktop": 1920px,
+) !default;
+
+@mixin screen($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint cannot be found.";
+  }
+}
