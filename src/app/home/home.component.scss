@@ -1,0 +1,74 @@
+@import "src/theme/theme-variables";
+
+.hero {
+  .hero__image {
+    object-fit: cover;
+  }
+  .hero__info {
+    background-color: theme-color("primary", "base");
+    padding: 2rem 0;
+  }
+
+  @include screen("tablet-landscape") {
+    .hero__info {
+      order: 1;
+    }
+  }
+
+  .hero__text {
+    color: white;
+    margin-top: 0;
+    font-size: 1rem;
+  }
+}
+
+.section1 {
+  overflow: hidden;
+  padding: 20px;
+}
+
+.section1__card {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-left: 30px;
+
+  .section1__subtitle {
+    font-size: 0.9rem;
+    margin: 0 0 1.1rem 0;
+  }
+
+  .section1__percentage {
+    font-weight: 500;
+    font-size: 1.8rem;
+    margin: 0;
+    line-height: 1.8rem;
+  }
+
+  .section1__title {
+    margin: 0;
+    font-weight: bold;
+    width: 7rem;
+    height: 5.5rem;
+  }
+
+  .section1__circle {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+
+    &.section1__circle--accent {
+      background-color: rgba(theme-color("accent", "base"), 0.3);
+      border: 1px solid theme-color("accent", "base");
+      color: theme-color("accent", "base");
+    }
+  }
+  ::ng-deep .section1__icon {
+    font-size: 1.3rem;
+  }
+
+  .section1__rule--accent {
+    border-top: 1px solid theme-color("accent", "base");
+    margin-bottom: 1rem;
+  }
+}

@@ -33,15 +33,16 @@ body {
   flex-direction: column;
   margin: 0;
   height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   background-color: rgb(244, 244, 244);
-  font-family: "Droid Arabic Kufi";
+  font-family: "Droid Arabic Kufi", "Arial";
 }
 
 body * {
-  font-family: "Droid Arabic Kufi";
+  font-family: "Droid Arabic Kufi", "Arial";
 }
 
 * {
@@ -86,10 +87,18 @@ body * {
 
 .mat-input-element {
   font-weight: bold !important;
-  font-family: "Droid Arabic Kufi" !important;
+  font-family: "Droid Arabic Kufi", "Arial" !important;
   color: theme-color("primary", "base") !important;
 }
 
 .mat-select-trigger {
   height: 1.35em;
+}
+
+/* card css */
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.19);
 }

@@ -1,0 +1,16 @@
+<div class="navigator" fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="navigator__button" fxLayout="row" fxLayoutAlign="center center" matRipple (click)="navigateRight()">
+    <fa-icon [icon]="icons.arrowRight" [classes]="['navigator__icon']"></fa-icon>
+  </div>
+  <div class="navigator__sections" fxLayout="row" fxLayoutAlign="space-between center">
+    <div
+      class="navigator__section"
+      *ngFor="let item of items; let i = index"
+      [class.navigator__section--active]="activeIndex === i"
+      (click)="navigateTo(i)"
+    ></div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" class="navigator__button" matRipple (click)="navigateLeft()">
+    <fa-icon [icon]="icons.arrowLeft" [classes]="['navigator__icon']"></fa-icon>
+  </div>
+</div>

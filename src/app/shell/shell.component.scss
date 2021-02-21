@@ -10,12 +10,20 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.19);
 }
 
+::ng-deep .mat-drawer-container {
+  width: 100vw !important;
+}
+
+::ng-deep .mat-drawer-content {
+  overflow-x: hidden !important;
+}
+
 .mat-sidenav {
   min-width: 300px;
   max-width: 28%;
-  height: 100vh;
   display: flex;
   flex-flow: column nowrap;
+  position: fixed;
 }
 
 .mat-list {
@@ -98,7 +106,7 @@
   display: flex;
   flex-flow: column nowrap;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .menu__image {

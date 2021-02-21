@@ -1,0 +1,40 @@
+@import "src/theme/theme-variables";
+
+.pill {
+  display: inline-flex !important;
+
+  &.pill--primary {
+    border: 1px solid theme-color("primary", "base");
+    color: theme-color("primary", "base");
+  }
+
+  &.pill--secondary {
+    border: 1px solid theme-color("secondary", "base");
+    color: theme-color("secondary", "base");
+  }
+
+  &.pill--info {
+    border: 1px solid theme-color("info", "base");
+    color: theme-color("info", "base");
+  }
+
+  &.pill--white {
+    border: 1px solid white;
+    color: white;
+  }
+
+  &.pill--md {
+    padding: 0.3rem 1.2rem;
+    border-radius: 1.5rem;
+  }
+
+  &.pill--sm {
+    padding: 0 1rem;
+    border-radius: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  &.pill--clickable {
+    cursor: pointer;
+  }
+}

@@ -1,1 +1,37 @@
-<p>Home</p>
+<div class="hero" fxLayout="row wrap" fxLayoutAlign="start stretch">
+  <div class="hero__info" fxFlex="40%" fxFlex.lt-md="100%" fxLayout="row" fxLayoutAlign="center center">
+    <div fxFlex="80%">
+      <app-title theme="white" title="LEBANON"></app-title>
+      <p class="hero__text">
+        لبنان أو (رسميا: الجمهورية اللبنانية)، هي دولة عربية واقعة في الشرق الأوسط في غرب القارة الآسيوية. ها سوريا من
+        الشمال والشرق، وفلسطين المحتلة من الجنوب، وتطل من جهة الغرب على البحر الأبيض
+      </p>
+      <app-pill label="IDENTITY_CARD" [clickable]="true" theme="white" size="md"></app-pill>
+    </div>
+  </div>
+  <img class="hero__image" src="assets/stock-images/stock2.jpeg" fxFlex="60%" fxFlex.lt-md="100%" />
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <h3>مؤشرات الأداء الرئيسية</h3>
+  <app-pill label="MORE" theme="primary" size="sm" [clickable]="true"></app-pill>
+</div>
+<div class="section1" fxLayout="row" fxLayoutAlign="start center" #section1>
+  <div class="card section1__card" *ngFor="let item of [1, 2, 3, 4, 5, 6]">
+    <p class="section1__subtitle">فضاء راشيا</p>
+    <div fxLayout="row" fxLayoutAlign="space-between start">
+      <div>
+        <p class="section1__percentage">53.9%</p>
+        <p class="section1__title">لا مراكز اسعافات أولية</p>
+      </div>
+      <div class="section1__circle section1__circle--accent" fxLayout="row" fxLayoutAlign="center center">
+        <fa-icon [icon]="icons.ambulance" [classes]="['section1__icon']"></fa-icon>
+      </div>
+    </div>
+    <hr class="section1__rule--accent" />
+    <app-pill label="الصحة" size="sm" [clickable]="false" theme="info"></app-pill>
+  </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <app-navigator [container]="section1"></app-navigator>
+</div>

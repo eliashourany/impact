@@ -71,7 +71,8 @@ export class ShellComponent implements OnInit {
   ];
 
   icon = faChevronLeft;
-
+  aboutDrawer = false;
+  infoDrawer = false;
   constructor(private router: Router, private titleService: Title, private media: MediaObserver) {}
 
   ngOnInit() {}

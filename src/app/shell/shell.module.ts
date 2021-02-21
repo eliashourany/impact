@@ -8,6 +8,9 @@ import { I18nModule } from '@app/i18n';
 import { MaterialModule } from '@app/material.module';
 import { ShellComponent } from './shell.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SharedModule } from '@shared';
+import { AboutModule } from '@app/about/about.module';
+import { MethodologyModule } from '@app/methodology/methodology.module';
 
 @NgModule({
   imports: [
@@ -18,6 +21,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     I18nModule,
     RouterModule,
     FontAwesomeModule,
+    SharedModule,
+    AboutModule,
+    MethodologyModule,
   ],
   declarations: [ShellComponent],
 })

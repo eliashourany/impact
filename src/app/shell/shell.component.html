@@ -61,11 +61,11 @@
           <mat-icon matSuffix class="search-icon">search</mat-icon>
         </mat-form-field>
         <div fxFlex.lt-xl="100%" class="links" fxLayout="row" fxLayoutGap="60px">
-          <div class="link" fxLayout="row" fxLayoutAlign="start center">
+          <div class="link" fxLayout="row" fxLayoutAlign="start center" (click)="aboutDrawer = true">
             <fa-icon [icon]="icon" [classes]="['link__icon']"></fa-icon>
             <p class="link__label">{{ 'ABOUT_THE_PROJECT' | translate }}</p>
           </div>
-          <div class="link" fxLayout="row" fxLayoutAlign="start center">
+          <div class="link" fxLayout="row" fxLayoutAlign="start center" (click)="infoDrawer = true">
             <fa-icon [icon]="icon" [classes]="['link__icon']"></fa-icon>
             <p class="link__label">{{ 'METHODOLOGY_FOLLOWED' | translate }}</p>
           </div>
@@ -75,3 +75,6 @@
     </div>
   </mat-sidenav-container>
 </div>
+
+<app-drawer [(opened)]="aboutDrawer"><app-about *ngIf="aboutDrawer"></app-about></app-drawer>
+<app-drawer [(opened)]="infoDrawer"><app-methodology *ngIf="infoDrawer"></app-methodology></app-drawer>

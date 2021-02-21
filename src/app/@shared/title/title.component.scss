@@ -1,0 +1,41 @@
+@import "src/theme/theme-variables";
+
+.title {
+  font-size: 2rem;
+  display: inline-block;
+  margin: 1rem 0;
+  &::after {
+    width: 20%;
+    content: "";
+    display: block;
+  }
+
+  &.title--primary {
+    color: theme-color("primary", "base");
+
+    &::after {
+      border: 1px solid theme-color("primary", "base");
+    }
+  }
+
+  &.title--secondary {
+    color: theme-color("secondary", "base");
+    &::after {
+      border: 1px solid theme-color("secondary", "base");
+    }
+  }
+
+  &.title--info {
+    color: theme-color("info", "base");
+    &::after {
+      border: 1px solid theme-color("info", "base");
+    }
+  }
+
+  &.title--white {
+    color: white;
+    &::after {
+      border: 1px solid white;
+    }
+  }
+}

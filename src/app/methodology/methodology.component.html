@@ -1,0 +1,53 @@
+<app-title title="METHODOLOGY_FOLLOWED"></app-title>
+<p class="text">
+  بين 7 تشرين الأول و12 تشرين الثاني 2020، تمكن المستخدون أي ممثلو البلدات ال26 (أما رؤساء البلديات أو موظفيها أو
+  مختارين) في نطاق قضاء راشيا من تزويد بينات ومعلومات مباشرة على منصة IMPACT في مجالات عدة ترتبط بحياة وحاجات البلدة
+  وأهاليها. أجاب المستخدمون على استمارة تغطي كافة المجالات والقطاعات ذي العلاقة بالشأن العام، منها الواقع الديمغرافي،
+  حالة البنى التحتية، الواقع التربوي والصحي والسياحي والتجاري والزراعي والصناعي، بالإضافة الى الشؤون الثقافية
+  والاجتماعية. لقد تم وضع هذه الاستمارة من قبل أعضاء اللجنة الوزارية المعنية بمشروع مسح التنمية الريفية للمناطق
+  اللبنانية والتي سمحت بمساهمة قيمة من مجموعة واسعة من الوزارات المعنية:
+</p>
+
+<div
+  class="cards__container"
+  fxLayout="row wrap"
+  fxLayoutAlign="start center"
+  fxLayoutGap.gt-lg="2rem"
+  fxLayoutGap.gt-md="1rem"
+  fxLayoutGap="0.5rem"
+>
+  <div class="card" *ngFor="let item of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]">
+    <img src="assets/wizarit-el-mhajarin.svg" class="card__image" />
+  </div>
+</div>
+
+<hr class="rule" />
+
+<p class="text">
+  تعرض منصة المشروع واقع التنمية الريفية في الأقضية المرصودة وتستند بشكل رئيسي على إجابات البلديات المعنية، مع مراجعتها
+  من قبل فريق باحثين للمنصة. وحين اقتضت الحاجة، تم التنسيق مع قائمقام الأقضية الى جانب المستخدمين من أجل التدقيق ببعض
+  البينات، وقد تم تصحيح أو تأكيد المعلومات تباعا بناء على هذه الآلية.
+</p>
+
+<p class="alt-text">يعتمد عرض البينات وتحليلها على ثلاثة أنواع من المؤشرات الكمية في سياق المنهجية المتبعة:</p>
+
+<div
+  fxLayout="row wrap"
+  fxLayoutAlign="center start"
+  fxLayoutGap.gt-lg="2rem"
+  fxLayoutGap.gt-md="1rem"
+  fxLayoutGap="0.5rem"
+>
+  <div class="circle circle--color1" fxLayout="column" fxLayoutAlign="center center">
+    <fa-icon [icon]="icons.file" [classes]="['circle__icon']"></fa-icon>
+    <p class="circle__label">رئيسي على إجابات البلديات</p>
+  </div>
+  <div class="circle circle--color2" fxLayout="column" fxLayoutAlign="center center">
+    <fa-icon [icon]="icons.copy" [classes]="['circle__icon']"></fa-icon>
+    <p class="circle__label">رئيسي على إجابات البلديات</p>
+  </div>
+  <div class="circle circle--color3" fxLayout="column" fxLayoutAlign="center center">
+    <fa-icon [icon]="icons.chart" [classes]="['circle__icon']"></fa-icon>
+    <p class="circle__label">رئيسي على إجابات البلديات</p>
+  </div>
+</div>

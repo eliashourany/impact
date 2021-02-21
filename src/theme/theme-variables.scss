@@ -84,6 +84,9 @@ $theme-colors: (
   "info": (
     "base": rgb(174, 174, 174),
   ),
+  "accent": (
+    "base": rgb(255, 141, 55),
+  ),
 );
 
 @function theme-color($key: "primary", $variant: "base") {
@@ -181,7 +184,7 @@ $breakpoints: (
   "tablet-portrait": 600px,
   "tablet-landscape": 960px,
   "desktop": 1280px,
-  "big-desktop": 1920px,
+  "big-desktop": 1919px,
 ) !default;
 
 @mixin screen($breakpoint) {

@@ -1,0 +1,11 @@
+<div
+  class="pill"
+  [ngClass]="classes"
+  fxLayout="row"
+  fxLayoutAlign="center center"
+  matRipple
+  [matRippleDisabled]="!clickable"
+  (click)="clicked.emit($event)"
+>
+  <span>{{ label | translate }}</span>
+</div>

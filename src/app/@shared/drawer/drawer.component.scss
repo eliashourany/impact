@@ -1,0 +1,46 @@
+@import "src/theme/theme-variables";
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.sidenav {
+  width: 40vw;
+  height: 100vh;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.close-icon {
+  font-size: 2rem;
+}
+
+:host ::ng-deep .mat-drawer-container {
+  z-index: 20;
+}
+
+.content {
+  padding: 4rem;
+
+  @include screen("tablet-portrait") {
+    padding: 3rem;
+  }
+}
+
+::ng-deep .mat-drawer {
+  width: 60vw !important;
+
+  @include screen("tablet-portrait") {
+    width: 100vw !important;
+  }
+}
