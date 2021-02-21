@@ -37,7 +37,6 @@ export class NavigatorComponent implements OnInit {
   get items() {
     const numberOfScrollable =
       this.container.scrollWidth / (this.container.clientWidth - this.container.firstElementChild.clientWidth);
-    console.log(numberOfScrollable);
     if (numberOfScrollable) {
       return Array(Math.ceil(numberOfScrollable))
         .fill()
